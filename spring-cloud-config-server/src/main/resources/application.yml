@@ -1,0 +1,15 @@
+server:
+  port: 8085
+  servlet:
+    contextPath: /configserver
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ruchikaranpise6/config-store.git
+          search-paths: '{application}'
+          default-label: master
