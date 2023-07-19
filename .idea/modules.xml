@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/custom-trip-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/custom-trip-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/demo.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/microservice-practice.iml" filepath="$PROJECT_DIR$/.idea/microservice-practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud-api-gateway.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud-api-gateway.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-security-demo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-security-demo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trip-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/trip-service.main.iml" />
     </modules>
   </component>
 </project>

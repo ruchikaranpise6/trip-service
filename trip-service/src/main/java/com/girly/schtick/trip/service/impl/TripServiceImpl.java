@@ -85,13 +85,12 @@ public class TripServiceImpl implements TripService {
         retryCount++;
 
         //using rest template
-        customPackages =
+        /*customPackages =
                 restTemplate.getForEntity("http://CUSTOM-TRIP-SERVICE/custom-trip", String.class);
-        log.info("Data received from custom - trip :" + customPackages.getBody());
-
-        //using feign client
-        /*customPackages = customTripServiceFeignClient.getCustomTrips();
         log.info("Data received from custom - trip :" + customPackages.getBody()); */
+        //using feign client
+        customPackages = customTripServiceFeignClient.getCustomTrips();
+        log.info("Data received from custom - trip :" + customPackages.getBody());
 
         return responses;
     }

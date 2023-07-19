@@ -72,6 +72,19 @@ docker run -p 3307:3306 --name mysqldb --net demo --mount type=bind,source=/User
 12. to restart container
 
 docker restart app
+=====================
+
+application.yml -> content
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/user
+    driver-class-name: com.mysql.jdbc.Driver
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:root}
 
 =========Curls==========
 1. Request to create record
