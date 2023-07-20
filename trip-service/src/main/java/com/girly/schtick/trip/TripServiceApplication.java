@@ -7,9 +7,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableEurekaClient
 @EnableFeignClients
 @EnableDiscoveryClient
+@EnableEurekaClient
 public class TripServiceApplication {
 
 	public static void main(String[] args) {
