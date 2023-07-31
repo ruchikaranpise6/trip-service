@@ -1,0 +1,5 @@
+
+producer:
+  bootstrap-server: localhost:9092
+  key-serializer: org.apache.kafka.common.serialization.StringSerializer
+  value-deserializer: org.apache.kafka.common.serialization.StringSerializer
