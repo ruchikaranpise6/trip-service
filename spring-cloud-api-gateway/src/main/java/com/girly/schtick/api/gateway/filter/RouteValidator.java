@@ -1,3 +1,4 @@
+/*
 package com.girly.schtick.api.gateway.filter;
 
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -15,3 +16,4 @@ public class RouteValidator {
             .stream()
             .noneMatch(uri -> serverHttpRequest.getURI().getPath().contains(uri));
 }
+*/

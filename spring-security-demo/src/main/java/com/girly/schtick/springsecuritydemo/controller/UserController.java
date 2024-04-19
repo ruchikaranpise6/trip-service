@@ -14,13 +14,13 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public void addUser(@RequestBody UserBean request) {
         userService.addUser(request);
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+    //@PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
     public UserBean getUser(@PathVariable Integer id) {
         return userService.getUserById(id);
     }

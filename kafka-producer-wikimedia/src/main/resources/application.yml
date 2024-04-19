@@ -1,5 +1,13 @@
+server:
+  port: 8089
+spring:
+  kafka:
+    producer:
+      bootstrap-server: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
-producer:
-  bootstrap-server: localhost:9092
-  key-serializer: org.apache.kafka.common.serialization.StringSerializer
-  value-deserializer: org.apache.kafka.common.serialization.StringSerializer
+  docker:
+    compose:
+      enabled: true
+      file: kafka-producer-wikimedia/docker-compose.yml

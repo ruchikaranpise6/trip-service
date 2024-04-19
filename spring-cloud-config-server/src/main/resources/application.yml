@@ -10,6 +10,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ruchikaranpise6/config-store.git
+          uri: https://github.com/ruchikaranpise6/config-store
           search-paths: '{application}'
           default-label: master
+          skipSslValidation: true

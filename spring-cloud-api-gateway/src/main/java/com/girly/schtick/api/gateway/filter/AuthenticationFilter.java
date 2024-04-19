@@ -1,3 +1,4 @@
+/*
 package com.girly.schtick.api.gateway.filter;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,3 +56,4 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     }
 
 }
+*/

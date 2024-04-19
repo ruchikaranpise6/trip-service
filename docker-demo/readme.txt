@@ -8,7 +8,7 @@
 
 1. docker run -p 3307:3307 --name mysqldb mysql
 
-this command will give you an error as usernmae and password are not set.
+this command will give you an error as username and password are not set.
 
 so delete created docker container-
 

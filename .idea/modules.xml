@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/custom-trip-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/custom-trip-service.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/demo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/k8s-example2-mysql.main.iml" filepath="$PROJECT_DIR$/.idea/modules/k8s-example2-mysql.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kafka-consumer-wikimedia.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kafka-consumer-wikimedia.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kafka-producer-wikimedia.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kafka-producer-wikimedia.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/microservice-practice.iml" filepath="$PROJECT_DIR$/.idea/microservice-practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud-api-gateway.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud-api-gateway.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-security-demo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-security-demo.main.iml" />

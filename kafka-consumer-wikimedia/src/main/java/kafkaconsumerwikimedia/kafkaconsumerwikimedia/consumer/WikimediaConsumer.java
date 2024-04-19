@@ -10,9 +10,10 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class WikimediaConsumer {
 
-    private static final Logger logger = LoggerFactory.getLogger("WikimediaConsumer");
-    @KafkaListener(topics = {"wikimedia"}, groupId = "myGroup")
-    public void consumer(String eventMessage){
-        logger.info(String.format("Message received -> %s "+));
-    }
+  private static final Logger logger = LoggerFactory.getLogger("WikimediaConsumer");
+
+  @KafkaListener(topics = {"wikimedia"}, groupId = "myGroup")
+  public void consumer(String eventMessage) {
+    logger.info("Message received - " + eventMessage);
+  }
 }

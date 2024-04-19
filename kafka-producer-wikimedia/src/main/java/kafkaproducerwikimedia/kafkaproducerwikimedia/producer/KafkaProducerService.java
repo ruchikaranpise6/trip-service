@@ -29,6 +29,6 @@ public class KafkaProducerService {
         EventSource.Builder builder = new EventSource.Builder(wikiMediaHandler, URI.create(url));
         EventSource eventSource = builder.build();
         eventSource.start();
-        TimeUnit.MINUTES.sleep(10);
+        TimeUnit.MINUTES.sleep(5);
     }
 }

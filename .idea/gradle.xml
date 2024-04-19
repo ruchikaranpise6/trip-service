@@ -22,6 +22,22 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/k8s-example" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/k8s-example" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/k8s-example2-mysql" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/k8s-example2-mysql" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/kafka-consumer-wikimedia" />
         <option name="modules">
           <set>

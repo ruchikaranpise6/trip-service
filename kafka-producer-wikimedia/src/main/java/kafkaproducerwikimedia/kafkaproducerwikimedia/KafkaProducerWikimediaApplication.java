@@ -18,6 +18,6 @@ public class KafkaProducerWikimediaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
+		kafkaProducerService.sendMessage();
 	}
 }

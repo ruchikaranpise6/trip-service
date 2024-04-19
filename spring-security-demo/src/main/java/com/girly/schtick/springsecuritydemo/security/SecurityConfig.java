@@ -2,6 +2,7 @@ package com.girly.schtick.springsecuritydemo.security;
 
 import com.girly.schtick.springsecuritydemo.filter.JWTAuthFilter;
 import com.girly.schtick.springsecuritydemo.service.UserDetailsServiceImpl;
+import jakarta.ws.rs.HttpMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,20 +19,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity //as method level annotations are enabled in controller i.e preauthorize
 public class SecurityConfig {
 
-    @Autowired
-    private JWTAuthFilter jwtAuthFilter;
+  @Autowired
+  private JWTAuthFilter jwtAuthFilter;
 
-    //authentication
-    @Bean
-    public UserDetailsService userDetailsService() {
+  //authentication
+  @Bean
+  public UserDetailsService userDetailsService() {
 
-        //Hardcoded users
+    //Hardcoded users
         /*UserDetails admin = User.withUsername("admin")
                 .password(passwordEncoder().encode("root"))
                 .roles("ADMIN")
@@ -42,44 +44,41 @@ public class SecurityConfig {
                 .build();
         return new InMemoryUserDetailsManager(admin, user);*/
 
-        //Read users from DB
-        return new UserDetailsServiceImpl();
-    }
+    //Read users from DB
+    return new UserDetailsServiceImpl();
+  }
 
-    //authorization
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.csrf().disable()
-                .authorizeHttpRequests()
-                .antMatchers("/security/token","/security/validateToken").permitAll()
-                .and()
-                .authorizeHttpRequests()
-                .antMatchers("/users","/users/**").authenticated()
-                /*.and().formLogin()
-                .and().build();*/
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .authenticationProvider(authenticationProvider())
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class).build();
-    }
+  //authorization This code needs to be fixed.
+  @Bean
+  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    return http
+        .authorizeRequests(requests ->
+            requests.requestMatchers("/security/**", "/users", "/users/**")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
+        )
+        .authenticationProvider(authenticationProvider())
+        .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+        .build();
+  }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
 
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-        authenticationProvider.setUserDetailsService(userDetailsService());
-        authenticationProvider.setPasswordEncoder(passwordEncoder());
-        return authenticationProvider;
-    }
+  @Bean
+  public AuthenticationProvider authenticationProvider() {
+    DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+    authenticationProvider.setUserDetailsService(userDetailsService());
+    authenticationProvider.setPasswordEncoder(passwordEncoder());
+    return authenticationProvider;
+  }
 
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
-        return configuration.getAuthenticationManager();
-    }
+  @Bean
+  public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration)
+      throws Exception {
+    return configuration.getAuthenticationManager();
+  }
 }

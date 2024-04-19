@@ -1,3 +1,4 @@
+/*
 package com.girly.schtick.api.gateway.filter;
 
 import io.jsonwebtoken.Jwts;
@@ -24,3 +25,4 @@ public class JWTValidatorUtil {
         return false;
     }
 }
+*/
