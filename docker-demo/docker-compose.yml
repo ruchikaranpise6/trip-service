@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: user
+    networks:
+      springboot-mysql-net:
+
+  docker-demo:
+    container_name: docker-demo
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysqldb
+    networks:
+      springboot-mysql-net:
+
+networks:
+  springboot-mysql-net:
